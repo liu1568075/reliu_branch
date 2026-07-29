@@ -1,6 +1,6 @@
 # LibreGene — 质粒编辑器
 
-基于 React + Vite + Tauri v2 + Rust 的桌面质粒编辑器。纯 SVG 渲染，支持多行自适应换行、分段特征、引物可视化、酶切位点标注、序列比对、插件系统。默认输出增强型 GenBank 文件（含颜色和引物注释）。
+基于 React + Vite + Tauri v2 + Rust 的桌面质粒编辑器。纯 SVG ���染，支持多行自适应换行、分段特征、引物可视化、酶切位点标注、序列比对、插件系统。默认输出增强型 GenBank 文件（含颜色和引物注释）。
 
 **这是 Tauri v2 桌面应用，不要用浏览器测试，必须用 `npx tauri dev` 启动。**
 **仅在 macOS 上测试过。**
@@ -69,7 +69,7 @@ LibreGene/
 │   │   ├── DebugPanel.jsx      # 调试面板
 │   │   ├── PrimerOverviewDialog.jsx  # 引物总览弹窗
 │   │   ├── SettingsPage.jsx    # 设置页面
-│   │   ├── TitleBar.jsx        # 无框窗口自定义标题栏
+│   │   ├── TitleBar.jsx        # 拖拽标题栏（tauri-plugin-decoration 提供原生 macOS 红绿灯 / Windows overlay 控件）
 │   │   └── ui/                 # shadcn UI 组件
 │   ├── hooks/
 │   │   └── use-mobile.js       # 移动端断点检测（768px）
@@ -127,7 +127,7 @@ LibreGene/
 #### Constants（editorConstants.js）
 
 - `cw = 12`（字符宽度 px），`startX = 220`，`baseSeqY = 100`
-- 所有坐标计算依赖这四个常量
+- 所有坐标计算依��这四个常量
 - `measureWidth()` 使用 Canvas 2D 缓存测量，`CACHE_MAX = 2000`
 
 ### 后端（Rust）
@@ -149,7 +149,7 @@ LibreGene/
 ## 仍有改进空间的地方（非 Bug）
 
 - **SequenceEditor.jsx ~2474 行** — 需拆分组件（如 FeatureLayer、PrimerLayer、EnzymeLayer 等）
-- **SVG 容器 `contain: 'layout style'`** — 创建新层叠上下文，可能影响固定定位元素
+- **SVG 容器 `contain: 'layout style'`** — 创建新层叠上下文，可能影响固定定位��素
 - **`list_projects` JSON 构建** — 可用序列化替代 `serde_json::json!` 宏
 
 ## 待实现功能（导航菜单占位）
